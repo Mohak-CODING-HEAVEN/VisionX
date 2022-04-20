@@ -9,7 +9,7 @@ You can simply use pip to install the latest version of visionx.
 
 `pip install visionx`
 
-<h3>OR</h3>
+<h4>OR</h4>
 
 ```shell
 git clone https://github.com/Mohak-CODING-HEAVEN/VisionX.git
