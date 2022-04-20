@@ -7,7 +7,9 @@ This is a Computer vision package that makes its easy to run Image processing an
 ## Installation
 You can simply use pip to install the latest version of visionx.
 
-`pip install visionx`
+```bash
+pip install visionx
+```
 
 <h4>OR</h4>
 
