@@ -46,9 +46,3 @@ while True:
     cv2.waitKey(1)
 ```
 
-<hr>
-
-### Face Mesh
-
-<hr>
-
