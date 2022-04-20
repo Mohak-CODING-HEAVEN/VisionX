@@ -5,6 +5,9 @@ By: Mohak Bajaj
 
 import cv2
 import mediapipe as mp
+import numpy as np
+from urllib import request
+import re
 
 
 class FaceDetector:
@@ -30,7 +33,11 @@ class FaceDetector:
         :param draw: Flag to draw the output on the image.
         :return: Image with or without drawings, Bounding Box list.
         """
-
+        regex = "^(http[s]?:\\/\\/(www\\.)?|ftp:\\/\\/(www\\.)?|www\\.){1}([0-9A-Za-z-\\.@:%_\+~#=]+)+((\\.[a-zA-Z]{2,3})+)(/(.)*)?(\\?(.)*)?"
+        if type(img) == "<class 'str'>" and re.match(regex, img):
+            img = request.urlopen(img).read()
+            img = np.asarray(bytearray(img), dtype=np.uint8)
+            img = cv2.imdecode(img, -1)
         imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         self.results = self.faceDetection.process(imgRGB)
         bboxs = []
